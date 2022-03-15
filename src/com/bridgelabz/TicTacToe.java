@@ -7,8 +7,8 @@ public class TicTacToe {
 
         char[][] board = new char[3][3];
         //Initialize
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 board[i][j] = '-';
             }
         }
@@ -20,5 +20,15 @@ public class TicTacToe {
         System.out.println("-----");
         System.out.println("C" + board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Player 1, what is your name? ");
+        String p1 = sc.nextLine();
+        System.out.print("Player 2, what is your name? ");
+        String p2 = sc.nextLine();
+        System.out.print(p1 + ", Choose X or O: ");
+        String letter = sc.next();
+
+
     }
+
 }
