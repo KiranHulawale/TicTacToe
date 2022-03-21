@@ -42,20 +42,15 @@ public class TicTacToe {
     }
     static void move() {
 
-        for (int i = 1; i <= 9; ) {
-            System.out.println("Enter the position (1,2,3,4,5,6,7,8,9)");
-            int position = sc.nextInt();
-            if (position <= 9) {
-                if (board[position] == ' ') {
-                    System.out.println("position is free");
-                } else {
-                    System.out.println("Position is already filled, Enter new position");
-                }
-                board[position] = player;
-            } else if (position > 9) {
-                System.out.println("Enter position from 1 to 9");
-            }
-            i++;
+        System.out.println("Enter position between 1-10");
+        int position = sc.nextInt();
+        if (position < 10 && position > 0)
+        {
+            board[position] = (char) position;
+            showBoard();
+        } else
+        {
+            System.out.println("Invalid");
         }
     }
 
