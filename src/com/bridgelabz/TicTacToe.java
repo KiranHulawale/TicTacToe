@@ -77,6 +77,84 @@ public class TicTacToe {
         }
     }
 
+    public static void winnerStatus(char symbol) {
+
+        char exitCode;
+        if(board[0]!='-' && board[0]==board[1] && board[1]==board[2]) {
+            if(board[0]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+
+        }
+        else if(board[3]!='-' && board[3]==board[4] && board[4]==board[5]) {
+            if(board[3]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+        else if(board[7]!='-' && board[6]==board[7] && board[7]==board[8]) {
+            if(board[7]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+        else if(board[6]!='-' && board[0]==board[3] && board[3]==board[6]) {
+            if(board[6]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+        else if(board[1]!='-' && board[1]==board[4] && board[4]==board[7]) {
+            if(board[1]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+        else if(board[5]!='-' && board[2]==board[5] && board[5]==board[8]) {
+            if(board[5]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+        else if(board[4]!='-' && board[0]==board[4] && board[4]==board[8]) {
+            if(board[4]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+        else if(board[2]!='-' && board[2]==board[4] && board[4]==board[6]) {
+            if(board[2]==symbol) {
+                System.out.println("Player win the game\n");
+            }
+            else {
+                System.out.println("Computer player win the game\n");
+            }
+            exitCode='1';
+        }
+    }
+
     public static void main(String[] args) {
 
         char[][] board = new char[3][3];
@@ -94,11 +172,12 @@ public class TicTacToe {
         System.out.println("-----");
         System.out.println("C" + board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
 
-        letterchoose();
-        showBoard();
-        toss();
-        move();
-
+       TicTacToe.letterchoose();
+       TicTacToe.showBoard();
+       TicTacToe.toss();
+       TicTacToe.move();
+        char playerSymbol = 0;
+       TicTacToe.winnerStatus(playerSymbol);
     }
 
 }
