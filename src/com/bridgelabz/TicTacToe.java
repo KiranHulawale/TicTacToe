@@ -3,6 +3,43 @@ import java.util.Scanner;
 
 
 public class TicTacToe {
+
+    static  void letterchoose(){
+        Scanner sc = new Scanner(System.in);
+//        String p1 = sc.nextLine();
+//        String p2 = sc.nextLine();
+//        System.out.print(p1 + ", Choose X or O: ");
+//        String letter = sc.next();
+        System.out.println("Letter entered is X or O");
+        char player = sc.next().charAt(0);
+        //char computer = sc.next().charAt(0);
+        char computer=' ';
+        if (player == 'X') {
+            computer='O';
+            System.out.println("Computer choose: " + player);
+
+        } else {
+            computer = 'O';
+            System.out.println("Computer choose: " + computer);
+        }
+        System.out.println("Player choose: " + player);
+        System.out.println("Computer choose: " + computer);
+
+    }
+
+    static char[] board = new char[10];
+    public static void showBoard()
+    {
+        System.out.println("Current board looks like this");
+        for (int j = 1; j <= 9; j++) {
+            System.out.print(board[j] + " | ");
+            if (j % 3 == 0) {
+                System.out.println();
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
 
         char[][] board = new char[3][3];
@@ -20,14 +57,8 @@ public class TicTacToe {
         System.out.println("-----");
         System.out.println("C" + board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Player 1, what is your name? ");
-        String p1 = sc.nextLine();
-        System.out.print("Player 2, what is your name? ");
-        String p2 = sc.nextLine();
-        System.out.print(p1 + ", Choose X or O: ");
-        String letter = sc.next();
-
+        letterchoose();
+        showBoard();
 
     }
 
