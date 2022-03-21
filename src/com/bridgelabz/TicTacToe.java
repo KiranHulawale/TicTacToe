@@ -65,6 +65,18 @@ public class TicTacToe {
         return false;
     }
 
+    public static void toss() {
+
+        int toss = (int) Math.floor(Math.random() * 10) % 2;
+        System.out.println("Choose 1 for Heads or 2 for Tails");
+        int tossCoin = sc.nextInt();
+        if (tossCoin == toss) {
+            System.out.println("Player won the toss\n");
+        } else {
+            System.out.println("Computer won the toss\n");
+        }
+    }
+
     public static void main(String[] args) {
 
         char[][] board = new char[3][3];
@@ -84,8 +96,8 @@ public class TicTacToe {
 
         letterchoose();
         showBoard();
+        toss();
         move();
-        isEmpty();
 
     }
 
