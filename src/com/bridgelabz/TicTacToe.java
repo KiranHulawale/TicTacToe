@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
+   static Scanner sc = new Scanner(System.in);
+   static char player;
     static  void letterchoose(){
-        Scanner sc = new Scanner(System.in);
+
 //        String p1 = sc.nextLine();
 //        String p2 = sc.nextLine();
 //        System.out.print(p1 + ", Choose X or O: ");
@@ -38,6 +40,24 @@ public class TicTacToe {
             }
         }
     }
+    static void move() {
+
+        for (int i = 1; i <= 9; ) {
+            System.out.println("Enter the position (1,2,3,4,5,6,7,8,9)");
+            int position = sc.nextInt();
+            if (position <= 9) {
+                if (board[position] == ' ') {
+                    System.out.println("position is free");
+                } else {
+                    System.out.println("Position is already filled, Enter new position");
+                }
+                board[position] = player;
+            } else if (position > 9) {
+                System.out.println("Enter position from 1 to 9");
+            }
+            i++;
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -59,6 +79,7 @@ public class TicTacToe {
 
         letterchoose();
         showBoard();
+        move();
 
     }
 
